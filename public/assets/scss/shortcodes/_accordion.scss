@@ -1,0 +1,126 @@
+/*****************************
+	Shortcodes
+*****************************/
+/*****************************
+	Accordion
+*****************************/
+.accordion {
+	.accordion-item {
+		.accordion-title {
+			margin-bottom: 15px;
+			font-size: 16px;
+			font-weight: 500;
+			.collapsed {
+				color: $gray-8;
+			}
+
+		}
+
+		.accordion-content {
+			padding-bottom: 25px;
+		}
+
+	}
+
+}
+
+/* Accordion Style */
+.accordion-style {
+	.accordion-item {
+		border: 2px solid $border-color;
+		margin-bottom: 10px;
+		border-radius: $border-radius;
+
+		&:last-child {
+			margin-bottom: 0px;
+		}
+
+	}
+
+	.accordion-header {
+		background: transparent;
+		border-bottom: none;
+		padding: .75rem 1.25rem;
+
+			i {
+				font-size: 12px;
+				margin-left: auto;
+				padding-right: 0;
+				align-self: flex-start;
+				margin-top: 7px;
+			}
+
+	}
+
+	.accordion-collapse {
+		border-top: 1px solid $border-color;
+	}
+
+.accordion-header {
+	.accordion-button {
+		color: $primary;
+		font-size: 16px;
+		padding: 0px;
+		text-decoration: none;
+		width: 100%;
+		text-align: left;
+		line-height: 1.5;
+		font-weight: 600;
+
+		&:after{
+			content:none;
+		}
+
+		+ {
+			i {
+				color: $primary;
+
+			}
+
+		}
+
+	}
+}
+	.accordion-button.collapsed {
+		color: $gray-8;
+
+		+ {
+			i {
+				color: $gray-8;
+			}
+
+		}
+
+	}
+
+}
+
+.accordion-style .btn.collapsed:hover,
+.accordion-style .btn {
+	color: $primary;
+}
+.accordion-style .btn{
+	box-shadow:none;
+}
+.accordion-style .btn-light:hover{
+	box-shadow: 1px 1px 14px 0px rgba($gray-8, 0.09);
+}
+.accordion-style .btn.btn-link:hover{
+	color: $primary;
+}
+
+.accordion-style .accordion-collapse li {
+	margin-bottom: 10px;
+}
+
+.accordion-style .accordion-collapse li:last-child {
+	margin-bottom: 0px;
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed){
+	box-shadow: none;
+	border: none;
+	background: transparent;
+}
+

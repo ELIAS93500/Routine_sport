@@ -1,0 +1,24 @@
+
+/*****************************
+    Not found 
+*****************************/
+.notfound-404 {
+    height: 230px;
+    position: relative;
+    z-index: -1;
+    h1 {
+        font-size: 160px;
+        margin: 0px;
+        font-weight: 700;
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background: url('../images/bg/opps-404-bg-img.jpg') no-repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: cover;
+        background-position: center;
+    }
+}

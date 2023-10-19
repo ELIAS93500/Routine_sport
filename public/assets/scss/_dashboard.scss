@@ -1,0 +1,352 @@
+/*****************************
+  Dashboard
+*****************************/
+.user-dashboard-sidebar {
+  .jobber-user-info {
+    border: 2px solid $border-color;
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+.jobber-user-info {
+  display: flex;
+  align-items: center;
+  .profile-avatar {
+    position: relative;
+    height: 115px;
+    width: 115px;
+    border-radius: 100%;
+    img {
+      border-radius: 100%;
+    }
+    i {
+      font-size: 16px;
+      color: $primary;
+      position: absolute;
+      background: $white;
+      border-radius: 100%;
+      cursor: pointer;
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+      text-align: center;
+      bottom: 20px;
+      right: -5px;
+    }
+  }
+}
+
+.upload-file {
+  .custom-file {
+    width: 160px;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    .custom-file-label {
+      background: $primary;
+      padding: 0;
+      color: $white;
+      height: 35px;
+      font-weight: 400;
+      line-height: 35px;
+      text-align: center;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.custom-file {
+  .custom-file-input {
+    height: 35px;
+  }
+}
+
+/* user dashboard nav */
+.user-dashboard-nav {
+  border: 2px solid $border-color;
+  padding: 2px;
+  margin-top: 30px;
+  ul {
+    li {
+      margin-bottom: 2px;
+      background: $primary;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+      a {
+        color: $gray-8;
+        padding: 15px 20px;
+        background: $gray-1;
+        display: block;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+    li.active {
+      a {
+        color: $primary;
+      }
+    }
+  }
+}
+
+/* user dashboard info box */
+
+.user-dashboard-info-box{
+  border: 2px solid  $border-color;
+  padding: 20px;
+  margin-bottom:30px;
+}
+
+.cover-photo-contact {
+  .cover-photo {
+    position: relative;
+    i {
+      top: -10px;
+      right: -10px;
+      font-size: 24px;
+      color: $primary;
+      position: absolute;
+      background: $white;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+  }
+}
+
+.user-dashboard-info-box {
+  .search {
+    position: relative;
+    i {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: $primary;
+      color: $white;
+      padding: 18px 20px;
+      cursor: pointer;
+      border-radius: 0 3px 3px 0px;
+    }
+    input {
+      padding-right: 65px;
+      border-radius: $border-radius;
+      height: 50px;
+    }
+  }
+}
+
+.user-dashboard-table {
+  th {
+    p {
+      color: $body-color;
+    }
+  }
+  tr {
+    td {
+      color: $body-color;
+      vertical-align: middle;
+    }
+  }
+  td {
+    li {
+      margin: 0 4px;
+      a.text-info {
+        color: $blue;
+      }
+      a {
+        &:hover {
+          color: $primary;
+        }
+      }
+      a.text-primary {
+        &:hover {
+          color: $gray-9 !important;
+        }
+      }
+    }
+  }
+}
+
+.user-dashboard-info-box {
+  .pricing-plan.active {
+    box-shadow: none !important;
+  }
+}
+
+
+/* dashboard */
+.user-dashboard-info-box {
+  .feature-info.bg-primary {
+    .feature-info-icon {
+      border: none;
+      background: lighten($primary, 10%);
+      color: #ffffff;
+    }
+  }
+  .feature-info.bg-dark {
+    .feature-info-icon {
+      background: lighten($gray-9, 04%);
+      border: none;
+    }
+  }
+  .feature-info.bg-light {
+    .feature-info-icon {
+      background: $white;
+      border: none;
+    }
+  }
+}
+
+
+/* candidates-user */
+.candidates-user-info {
+  .candidates-skills {
+    padding: 15px;
+    .btn {
+      padding: 12px 20px;
+    }
+  }
+}
+.candidates-profile-info {
+  .progress {
+    height: 2px;
+    bottom: 15px;
+    margin: 0px;
+    .progress-bar {
+      height: 2px;
+    }
+  }
+  .progress~.profile-avatar {
+    margin-top: 15px;
+  }
+}
+
+.user-dashboard-sidebar {
+  .progress {
+    .progress-bar-number {
+      position: absolute;
+      right: 10%;
+      color: #969696;
+      top: 10px;
+    }
+  }
+}
+.candidates-skills{
+  display: flex;
+  align-items: center;
+}
+
+/* candidates-feature-info */
+.candidates-feature-info {
+  display: flex;
+  transition: all 0.3s ease-in-out;
+  align-items: center;
+  .candidates-info-icon {
+    text-align: center;
+    flex: 0 0 65px;
+    i {
+      font-size: 24px;
+    }
+  }
+  .candidates-info-content {
+    .candidates-info-title {
+      margin-bottom: 0;
+    }
+  }
+  .candidates-info-count {
+    margin-left: auto;
+    text-align: center;
+    font-size: 24px;
+    padding: 25px 0px;
+    border-left: 1px solid lighten($white, 10%);
+    flex: 0 0 85px;
+  }
+}
+
+
+/* dashboard my resume */
+.user-dashboard-info-circle {
+  border: 2px solid $border-color;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  margin-top: 10px;
+  i {
+    color: $gray-9;
+  }
+}
+
+.user-dashboard-info-box {
+  .user-dashboard-minus {
+    i {
+      background: $gray-9;
+      padding: 4px 8px;
+      border-radius: $border-radius;
+      color: $white;
+    }
+  }
+}
+.user-dashboard-info-box {
+  .dashboard-timeline-info {
+    position: relative;
+  }
+}
+.user-dashboard-info-box {
+  .dashboard-timeline-edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+
+/* My Resume */
+.profile{
+  margin-bottom: 25px;
+  .jobber-user-info {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    .profile-avatar {
+      position: relative;
+      height: 115px;
+      width: 115px;
+      border-radius: 100%;
+      display: inline-block;
+      img {
+        border-radius: 100%;
+      }
+      i {
+        font-size: 16px;
+        color: $primary;
+        position: absolute;
+        background: $white;
+        border-radius: 100%;
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        text-align: center;
+        bottom: 20px;
+        right: -5px;
+      }
+    }
+  }
+}
+
+.about-candidate {
+  padding: 25px 0px;
+  .candidate-info {
+    margin-bottom: 20px;
+  }
+}
+
+.resume-experience{
+  padding-left: 20px;
+}

@@ -1,0 +1,156 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte
+{% endblock %}
+
+{% block body %}
+
+
+	<!--=================================
+		inner banner -->
+	<div class="header-inner bg-light text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="text-primary">MON COMPTE</h2>
+					<ol class="breadcrumb mb-0 p-0">
+						<li class="breadcrumb-item">
+							<a href="{{path('app_home')}}">
+								Accueil
+							</a>
+						</li>
+						<li class="breadcrumb-item active">
+							<i class="fas fa-chevron-right"></i>
+							<span>
+								Mon compte</span>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--=================================
+		inner banner -->
+
+
+	<!--=================================
+		Service -->
+	<section class="space-pb">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mb-4 mt-5">
+					<div class="feature-info feature-info-border text-center">
+						<div class="feature-info-icon mb-3">
+							<i class="flaticon-contract"></i>
+						</div>
+						<div class="feature-info-content">
+							<a href="{{path('myaccount_update')}}" style="text-decoration: none;">
+								<h5 class="text-black">Mon Profil</h5>
+							</a>
+							<p class="mb-4">Rassemble l'ensemble de tes informations.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mt-5">
+					<div class="feature-info feature-info-border text-center">
+						<div class="feature-info-icon mb-3">
+							<i class="flaticon-profiles"></i>
+						</div>
+						<div class="feature-info-content">
+							<a href="#" style="text-decoration: none;">
+								<h5 class="text-black">Mes Inscriptions</h5>
+							</a>
+							<p class="mb-0">Englobe toutes tes inscriptions avec un coach ou un club.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mt-5">
+					<div class="feature-info feature-info-border text-center">
+						<div class="feature-info-icon mb-3">
+							<i class="flaticon-job-3"></i>
+						</div>
+						<div class="feature-info-content">
+							<a href="{{path('app_mes_annonces')}}" style="text-decoration: none;">
+								<h5 class="text-black">Mes Annonces</h5>
+							</a>
+							<p class="mb-0">Regroupe toutes les annonces que tu as publiées sur ce site.</p>
+						</div>
+
+					</div>
+					<div class="row mt-4">
+    <div class="col-md-8 mx-auto">
+        <a class="btn btn-outline-danger btn-sm btn-block" href="{{path('myaccount_delete')}}">
+            <i class="fas fa-trash-alt"></i> Supprimer mon compte
+        </a>
+    </div>
+</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--=================================
+		Service -->
+
+	<!--=================================
+						feature -->
+	<section class="feature-info-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 mb-lg-0 mb-4">
+					<div class="feature-info feature-info-02 p-4 p-lg-5 bg-primary">
+						<div class="feature-info-icon mb-3 mb-sm-0 text-dark">
+							<i class="flaticon-team"></i>
+						</div>
+						<div class="feature-info-content text-white ps-sm-4 ps-0">
+							<br>
+							<h5 class="text-white">Voir les annonces</h5>
+						</div>
+						<a class="ms-auto align-self-center" href="{{path('app_home')}}">GO!<i class="fas fa-long-arrow-alt-right"></i>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="feature-info feature-info-02 p-4 p-lg-5 bg-dark">
+						<div class="feature-info-icon mb-3 mb-sm-0 text-primary">
+							<i class="flaticon-job-3"></i>
+						</div>
+						<div class="feature-info-content text-white ps-sm-4 ps-0">
+
+							<h5 class="text-white">Es-tu un club ou un coach ?</h5>
+						</div>
+						<a class="ms-auto align-self-center" href="{{path('upload_product')}}">Poster une annonce<i class="fas fa-long-arrow-alt-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--=================================
+								feature -->
+
+	<!--=================================
+		Back To Top-->
+	<div id="back-to-top" class="back-to-top">
+		<i class="fas fa-angle-up"></i>
+	</div>
+	<!--=================================
+		Back To Top-->
+
+
+	<!--=================================
+		Javascript -->
+
+	<!-- JS Global Compulsory (Do not remove)--><script src="js/jquery-3.6.0.min.js"> </script>
+	<script src="js/popper/popper.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+
+	<!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+	<script src="js/jquery.appear.js"></script>
+	<script src="js/counter/jquery.countTo.js"></script>
+
+	<!-- Template Scripts (Do not remove)-->
+	<script src="js/custom.js"></script>
+
+</body></html>{% endblock %}

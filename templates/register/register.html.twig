@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription
+{% endblock %}
+
+
+{% block body %}
+
+	<div class="header-inner bg-light text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="text-primary">INSCRIPTIONS</h2>
+					<ol class="breadcrumb mb-0 p-0">
+						<li class="breadcrumb-item">
+							<a href="{{path('app_home')}}">
+								Accueil
+							</a>
+						</li>
+						<li class="breadcrumb-item active">
+							<i class="fas fa-chevron-right"></i>
+							<span>
+								Inscription
+							</span>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--=================================
+							inner banner -->
+
+	<!--=================================
+							Register -->
+	<section class="space-ptb">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xl-8 col-lg-10 col-md-12">
+					<div class="login-register">
+						<div class="section-title">
+							<h4 class="text-center">Créer Votre Compte</h4>
+						</div>
+
+						<div class="tab-content">
+							{{ form_start(form)}}
+							{{ form_row(form.roles)}}
+							{{ form_end(form)}}
+							<div class="mb-3 col-12 mt-5">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="Remember-02">
+									<label class="form-check-label" for="Remember-02">
+										Vous acceptez nos conditions générales et notre politique de confidentialité
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-7 text-md-end mt-5 text-center">
+							<p>Déjà inscrit?
+								<a href="{{ path('app_login') }}">
+									Se connecter ici</a>
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	
+	</div>
+</section>
+<!--=================================
+	Register --><!--=================================
+							
+	
+
+
+
+
+							feature-info--><!--=================================
+							Back To Top--><div id="back-to-top" class="back-to-top"><i class="fas fa-angle-up"></i></div><!--=================================
+							Back To Top--><!--=================================
+							Javascript --><!-- JS Global Compulsory (Do not remove)-->
+							<script src="js/jquery-3.6.0.min.js"> </script><script src="js/popper/popper.min.js"></script>
+							<script src="js/bootstrap/bootstrap.min.js"></script>
+							<!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+							<script src="js/select2/select2.full.js"></script>
+							<!-- Template Scripts (Do not remove)-->
+						<script src="js/custom.js"></script></body></html>
+					{% endblock %}

@@ -1,0 +1,292 @@
+/*****************************
+  Sidebar
+*****************************/
+.sidebar {
+  .widget {
+    padding-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+.sidebar {
+  hr {
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+}
+.sidebar {
+  .search {
+    position: relative;
+    i {
+      position: absolute;
+      color: $primary;
+      cursor: pointer;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .form-control {
+      font-weight: 400;
+      padding-right: 40px;
+      height: 50px;
+      padding-left: 15px;
+    }
+  }
+}
+.sidebar {
+  .locations {
+    position: relative;
+    i {
+      position: absolute;
+      color: $primary;
+      cursor: pointer;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .form-control {
+      font-weight: 400;
+      padding-right: 40px;
+      height: 50px;
+      padding-left: 15px;
+    }
+  }
+}
+
+/* Widget */
+.widget {
+  .widget-title {
+    margin-bottom: 20px;
+    h6 {
+      margin-bottom: 0;
+    }
+    a {
+      color: $gray-8;
+    }
+  }
+}
+.widget {
+  .widget-collapse {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+/* similar-jobs-item */
+
+.similar-jobs-item {
+  .job-list {
+    border-bottom: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+/* checkbox */
+.widget {
+  .widget-content {
+    margin-top: 10px;
+    .form-check {
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+.widget {
+  .form-check.fulltime-job{
+       .form-check-input {
+      background-color: $blue;
+      border-color: $blue;
+    }
+  }
+}
+
+.widget {
+  .form-check.parttime-job{
+       .form-check-input {
+      background-color: $orange;
+      border-color: $orange;
+    }
+  }
+}
+
+.widget {
+  .form-check.freelance-job{
+       .form-check-input {
+      background-color: $green;
+      border-color: $green;
+    }
+  }
+}
+
+.widget {
+  .form-check.temporary-job{
+       .form-check-input {
+      background-color: $red;
+      border-color: $red;
+    }
+  }
+}
+
+
+.widget {
+  ul {
+    margin: 0;
+    li {
+      a {
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+.widget {
+  .company-detail-meta {
+    ul {
+      display:block;
+      align-items: center;
+      li {
+        margin-right: 15px;
+        display: inline-block;
+        a {
+          color: $gray-3;
+          font-weight: 600;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+.widget {
+  .company-detail-meta {
+    .share-box {
+      li {
+        margin-right: 0;
+        display: inline-block;
+        float: left;
+      }
+    }
+  }
+}
+
+.widget {
+  .company-detail-meta {
+    ul {
+      li.linkedin {
+        a {
+          padding: 15px 20px;
+          border: 2px solid $border-color;
+          border-radius: $border-radius;
+          display: inline-block;
+          i {
+            color: #06cdff;
+          }
+        }
+      }
+    }
+  }
+}
+
+.widget {
+  .company-address {
+    ul {
+      li {
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        a {
+          color: $gray-3;
+        }
+      }
+    }
+  }
+}
+
+.widget {
+  .widget-box {
+    border: 2px solid $border-color;
+    border-radius: $border-radius;
+    padding: 20px 15px;
+  }
+}
+
+.widget {
+  .similar-jobs-item {
+    .job-list.jobber-list {
+      padding: 15px 10px;
+      border: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.widget {
+  .similar-jobs-item {
+    .job-list-details {
+      align-self: center;
+    }
+  }
+}
+.widget {
+  .similar-jobs-item {
+    .job-list.jobber-list {
+      .job-list-company-name {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.widget {
+  .docs-content {
+    display: flex;
+    background: $border-color;
+    padding: 30px;
+    border-radius: $border-radius;
+    .docs-text {
+      align-self: center;
+      color: $gray-3;
+    }
+    span {
+      font-weight: 600;
+    }
+    .docs-icon {
+      margin-left: auto;
+      flex: 0 0 38px;
+    }
+  }
+}
+
+.widget {
+  .jobber-company-view {
+    ul {
+      li {
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        span {
+          color: $gray-8;
+          align-self: center;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,318 @@
+/*****************************
+    Feature Box
+*****************************/
+.feature-info {
+    padding: 25px;
+    transition: all 0.3s ease-in-out;
+    border-radius: $border-radius;
+    a {
+        text-decoration: underline;
+        font-weight: 600;
+        i {
+            padding-left: 10px;
+        }
+    }
+    &:hover {
+        background: $primary;
+    }
+}
+.feature-info {
+    .feature-info-icon {
+        font-size: 56px;
+        line-height: 56px;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+        color: $primary;
+    }
+    &:hover {
+        .feature-info-icon {
+            color: $white;
+        }
+    }
+}
+.feature-info {
+    .feature-info-content {
+        h5 {
+            transition: all 0.3s ease-in-out;
+        }
+        p {
+            margin-bottom: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    &:hover {
+        .feature-info-content {
+            color: $white;
+            span {
+                color: $white;
+            }
+            h5 {
+                color: $white;
+            }
+        }
+    }
+}
+.feature-info.bg-primary {
+    a {
+        color: $gray-9;
+        &:hover {
+            color: $white;
+        }
+    }
+}
+.feature-info.bg-dark {
+    a {
+        color: $primary;
+        &:hover {
+            color: $white;
+        }
+    }
+}
+.feature-info-border {
+    border: 1px solid $gray-1;
+    .feature-info-icon {
+        border: 1px solid $gray-1;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 30px;
+    }
+    &:hover {
+        .feature-info-icon {
+            border: 1px solid $white;
+            background: $white;
+            color: $primary;
+        }
+    }
+}
+
+.feature-info-02,
+.feature-info-04 {
+    display: flex;
+}
+.feature-info-03 {
+    .feature-info-image {
+        padding: 100px 0;
+    }
+}
+.bg-overlay-gradient-03 {
+    position: relative;
+    &:before {
+        z-index: 0;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0)), to(white)), -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255, 255, 255, 0)), to(white));
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, white 100%), linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, white 100%);
+        top: auto;
+        height: 100%;
+        -webkit-transition: all .35s;
+        transition: all .35s;
+    }
+}
+.feature-step {
+    padding: 0;
+    &:hover {
+        background: none;
+    }
+}
+.feature-step {
+    .feature-info-icon {
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+        border-radius: 50%;
+        font-size: 40px;
+        display: inline-block;
+        margin-bottom: 15px;
+        background: $gray-1;
+        transition: all 0.3s ease-in-out;
+        color: $black;
+        &:before {
+            content: inherit;
+        }
+    }
+    &:hover {
+        .feature-info-icon {
+            color: $primary;
+        }
+    }
+}
+.feature-step {
+    .feature-info-content {
+        padding: 10px 20px;
+    }
+    &:hover {
+        .feature-info-content {
+            h5 {
+                color: $black;
+            }
+            p {
+                color: $body-color;
+            }
+        }
+    }
+}
+.step-number {
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    color: $primary;
+    position: relative;
+    span {
+        &:after {
+            content: "";
+            border-top: 3px dotted rgba($border-color, 0.2);
+            width: 92%;
+            position: absolute;
+            height: 20px;
+            top: 12px;
+            left: 59%;
+        }
+    }
+}
+.row {
+    >[class*='col-'] {
+        &:last-child {
+            .step-number {
+                span {
+                    &:after {
+                        content: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.feature-step-01 {
+    .feature-info-icon {
+        background: none;
+        border-radius: 0;
+        position: relative;
+        line-height: inherit;
+        img {
+            border-radius: 50%;
+        }
+        &:before {
+            content: "";
+            background: $gray-9;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            border-radius: 50%;
+        }
+        &:after {
+            font-family: Flaticon;
+            font-size: 40px;
+            font-weight: normal;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding-left: 1px;
+            color: $white;
+            opacity: 0;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    .feature-info-icon.step-01 {
+        &:after {
+            content: "\f134";
+        }
+    }
+    .feature-info-icon.step-02 {
+        &:after {
+            content: "\f154";
+        }
+    }
+    .feature-info-icon.step-03 {
+        &:after {
+            content: "\f12f";
+        }
+    }
+}
+.feature-step {
+    &:hover {
+        .feature-info-icon {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+.feature-info-section {
+    position: relative;
+    z-index: 9;
+}
+.feature-info-content {
+    label {
+        font-size: 13px;
+    }
+}
+.feature-content {
+    padding: 70px 50px;
+}
+
+// info-box-1
+.info-box-1 a:hover{
+    color: #e07900;
+}
+
+// feature-info-rounded
+
+.feature-info-rounded {
+    padding: 0;
+    &:hover {
+        background: inherit;
+    }
+}
+.feature-info-rounded {
+    .feature-info-icon {
+        border: none;
+        border-radius: 100%;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        background: lighten( $primary, 10% );
+        color: $white;
+        text-align: center;
+        display: inline-block;
+        margin-bottom: 20px;
+        i {
+            font-size: 36px;
+            line-height: inherit;
+        }
+    }
+}
+
+
+.feature-info-rounded {
+    .feature-info-content {
+        .title {
+            color: lighten( $primary, 10% );
+        }
+    }
+}
+.feature-info-rounded.text-start {
+    display: flex;
+    .feature-info-icon {
+        flex: 0 0 80px;
+        margin-bottom: 0;
+    }
+}
+
+.bg-light {
+    .feature-info {
+        background: $white;
+        &:hover {
+            background: $primary;
+        }
+    }
+}

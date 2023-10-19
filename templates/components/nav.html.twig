@@ -1,0 +1,75 @@
+<!--=================================
+Header -->
+<header class="header bg-dark">
+	<nav class="navbar navbar-static-top navbar-expand-lg header-sticky">
+		<div class="container-fluid">
+			<button id="nav-icon4" type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<a href="{{path('app_home')}}">
+				<img class="img-fluid" width="125" src="{{asset('assets/images/ROUTINE.png')}}" alt="logo">
+			</a>
+			<div class="navbar-collapse collapse justify-content-start">
+				<ul class="nav navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_home')}}" id="navbarDropdown">Accueil
+						</a>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Annonce<i class="fas fa-chevron-down fa-xs"></i>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item" href="{{ path('app_home') }}#annonces">Voir les Annonces</a>
+
+							</li>
+							{% if app.user %}
+								<li>
+									<a class="dropdown-item" href="{{ path('upload_product') }}">Poster une Annonce</a>
+								</li>
+							{% endif %}
+						</ul>
+					</li>
+
+					{% if app.user %}
+						<li class="nav-item ">
+							<a class="nav-link" href="{{path('myaccount_index')}}">
+								Mon compte
+							</a>
+						</li>
+					{% endif %}
+					
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_contact')}}">Contact
+						</a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="add-listing">
+				{% if app.user %}
+					<div class="login d-inline-block me-4">
+						<a href="{{path('app_logout')}}">
+							<i class="far fa-user pe-2"></i>Deconnexion</a>
+					</div>
+				{% else %}
+					<div class="register d-inline-block me-4">
+						<a href="{{path('app_register')}}">
+							<i class="far fa-user pe-2"></i>Inscription</a>
+					</div>
+					<div class="login d-inline-block me-4">
+						<a href="{{path('app_login')}}">
+							<i class="far fa-user pe-2"></i>Connexion</a>
+					</div>
+				{% endif %}
+
+			</div>
+		</div>
+	</nav>
+</header>
+<!--=================================
+Header -->

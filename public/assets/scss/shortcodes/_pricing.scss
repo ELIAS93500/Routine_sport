@@ -1,0 +1,225 @@
+/*****************************
+    Pricing 
+*****************************/
+.pricing-plan {
+    border: 1px solid $gray-1;
+    position: relative;
+    margin: 20px 0;
+    padding-bottom: 25px;
+}
+.pricing-plan.active {
+    z-index: 2;
+    top: 0;
+    padding: 20px 0px 50px;
+    border-radius: $border-radius;
+    margin: 0 0px;
+    box-shadow: 0px 0px 12px 2px rgba($black, 0.04) !important;
+}
+
+.pricing-price {
+    border-bottom: 1px solid $gray-1;
+    padding: 20px 25px;
+    sup {
+        top: -20px;
+        font-size: 16px;
+        left: -5px;
+    }
+    strong {
+        color: $gray-9;
+        font-size: 50px;
+        transition: all 0.3s ease-in-out;
+        line-height: 50px;
+        font-weight: 500;
+    }
+}
+
+.pricing-list {
+    li {
+        border-bottom: 1px solid $gray-1;
+        padding: 15px;
+        &:nth-child(even) {
+            background: $gray-1;
+        }
+    }
+}
+
+.pricing-plan {
+    &:hover {
+        .btn {
+            background: $gray-9;
+            color: $white;
+            border-color: $gray-9;
+        }
+    }
+}
+.pricing-plan.active {
+    .btn {
+        background: $primary;
+        color: $white;
+        border-color: $primary;
+    }
+}
+
+
+.pricing-plan {
+    &:hover {
+        .pricing-price {
+            strong {
+                color: $primary;
+            }
+        }
+    }
+}
+.pricing-plan.active {
+    .pricing-price {
+        strong {
+            color: $primary;
+        }
+    }
+}
+
+/* pricing-plan-02 */
+.pricing-plan-02 {
+    .pricing-price {
+        border-bottom: 0;
+        span {
+            color: $gray-8;
+            font-size: 50px;
+            transition: all 0.3s ease-in-out;
+            line-height: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    }
+}
+.pricing-plan-02.free {
+    .pricing-price {
+        background: $gray-1;
+    }
+}
+.pricing-plan-02.free {
+    .btn {
+        background: $gray-1;
+        color: $gray-8;
+        border-color: $gray-1;
+    }
+}
+.pricing-plan-02.sponsor {
+    .pricing-price {
+        background: $primary;
+        span {
+            color: $white;
+        }
+        .pricing-title {
+            color: $white;
+        }
+    }
+}
+.pricing-plan-02.sponsor {
+    .btn {
+        background: $primary;
+        color: $white;
+        border-color: $primary;
+    }
+}
+
+
+.pricing-plan-02.premium {
+    .pricing-price {
+        background: $gray-9;
+        span {
+            color: $white;
+        }
+        .pricing-title {
+            color: $white;
+        }
+    }
+}
+.pricing-plan-02.premium {
+    .btn {
+        background: $gray-9;
+        color: $white;
+        border-color: $gray-9;
+    }
+}
+.pricing-plan-02.active {
+    padding-top: 0;
+}
+
+.pricing-plan-02 {
+    &:hover {
+        .pricing-price {
+            background: $primary;
+        }
+    }
+}
+.pricing-plan-02.active {
+    .pricing-price {
+        padding-top: 45px;
+        background: $primary;
+    }
+}
+
+
+.pricing-plan-02 {
+    &:hover {
+        .pricing-price {
+            .pricing-title {
+                color: $white;
+            }
+            span {
+                color: $white;
+            }
+        }
+    }
+}
+.pricing-plan-02.active {
+    .pricing-price {
+        .pricing-title {
+            color: $white;
+        }
+        span {
+            color: $white;
+        }
+    }
+}
+
+.pricing-plan-02 {
+    .pricing-list {
+        padding: 0px 20px;
+        li {
+            &:nth-child(even) {
+                background: inherit;
+            }
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+.pricing-plan-02.premium {
+    &:hover {
+        .btn {
+            background: $primary !important;
+            color: $white !important;
+            border-color: $primary !important;
+        }
+    }
+}
+.pricing-plan-02.free {
+    &:hover {
+        .btn {
+            background: $primary !important;
+            color: $white !important;
+            border-color: $primary !important;
+        }
+    }
+}
+.pricing-plan-02.active {
+    .btn {
+        background: $primary !important;
+        color: $white !important;
+        border-color: $primary !important;
+    }
+}

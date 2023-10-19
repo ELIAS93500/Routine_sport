@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Modifier une Annonce
+    {% endblock %}
+    
+    
+    {% block body %}
+    
+    <body>
+        <!--=================================
+                    tab -->
+        <section class="space-ptb bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h2 class="text-primary">MODIFIER TON ANNONCE</h2>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade active show" id="Job-detail" role="tabpanel" aria-labelledby="Job-detail-tab">
+                <section class="space-ptb">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                {{form_start(form)}}
+    
+                                <div class="row">
+                                    <div class="form-group col-md-12 mb-3">
+                                        {{form_row(form.name)}}
+                                    </div>
+                                    <div class="form-group col-md-12 mb-3">
+                                        {{form_row(form.description)}}
+                                    </div>
+    
+                                    <div class="form-group col-md-12 mb-3">
+                                        {{form_row(form.tel)}}
+                                    </div>
+    
+                                    <div class="form-group col-md-12 mb-3">
+                                        {{form_row(form.slogan)}}
+                                    </div>
+                                    <div class="form-group col-md-12 mb-3">
+                                    {{form_row(form.media1)}}
+                                </div>
+                                <div class="form-group col-md-12 mb-3">
+                                    {{form_row(form.media2)}}
+                                </div>
+                                <div class="form-group col-md-12 mb-3">
+                                    {{form_row(form.media3)}}
+                                </div>
+    
+                                    <div class="row">
+                                        <div class="form-group col-md-5 mb-3">
+                                            {{form_row(form.category)}}
+                                        </div>
+                                        <div class="form-group col-md-4 mb-3">
+                                            {{form_row(form.sport_type)}}
+                                        </div>
+    
+                                    </div>
+    
+    
+                                    <div class="form-group col-md-4 mb-3">
+                                        {{form_row(form.price)}}
+                                    </div>
+    
+                                    <div class="form-group col-md-4 mb-3">
+                                        {{form_row(form.date_start)}}
+                                    </div>
+    
+                                    <div class="form-group col-md-12  mb-3">
+                                        {{form_row(form.street_number)}}
+                                    </div>
+                                    <div class="form-group col-md-12 mb-3 ">
+                                        {{form_row(form.street_name)}}
+                                    </div>
+                                    <div class="form-group col-md-12 mb-3 ">
+                                        {{form_row(form.city) }}
+                                    </div>
+    
+                                    <div class="form-group col-12 mt-3 mb-5">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="accepts-01">
+                                            <label class="form-check-label ps-1" for="accepts-01">Vous acceptez nos
+                                                Conditions générales et notre Politique de confidentialité</label>
+                                        </div>
+                                    </div>
+                                    {{form_end(form)}}
+    
+                        
+                                </div>
+                            </div>
+                </section>
+            </div>
+        </div>
+    
+        <!--=================================
+                            Back To Top-->
+    
+    
+        <!--=================================
+                            Javascript -->
+    
+        <!-- JS Global Compulsory (Do not remove)-->
+        <script src="js/jquery-3.6.0.min.js"> </script>
+        <script src="js/popper/popper.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+    
+        <!-- Page JS Implementing Plugins (Remove the plugin script here if site does not use that feature)-->
+        <script src="js/select2/select2.full.js"></script>
+    
+        <!-- Template Scripts (Do not remove)-->
+        <script src="js/custom.js"></script>
+    </body>
+    
+    </html>
+    {% endblock %}

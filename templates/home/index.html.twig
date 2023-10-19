@@ -1,0 +1,333 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+
+{% endblock %}
+
+
+{% block body %}
+<!--=================================
+			Banner -->
+<section class="banner banner-bg-video bg-holder bg-overlay-black-30">
+	<video playsinline autoplay muted loop style="position: absolute; z-index: 0; width: 100%; top:0;height: max-content;">
+		<source src="{{asset('assets/video/video.mp4')}}" type="video/mp4">
+	</video>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="col-md-6 align-self-center position-relative">
+				<h1 class="text-white mb-2">Trouve ton club idéal ou le coach parfait, c'est par ici !!</h1>
+
+				<a href="{{ path('app_home') }}#annonces" class="btn btn-primary btn-lg">
+					Annonces</a>
+			</div>
+			<div class="col-md-6">
+				<div class="bg-overlay-black-50 p-lg-5 p-4 ms-0 ms-md-5 mt-4 mt-md-0 job-search-form">
+					<div class="position-relative">
+						<div class="job-search-field">
+							<div class="job-search-item">
+								<form class="form row">
+									<div class="col-12">
+										<div class="mb-3">
+											<div class="d-flex">
+												<label class="text-white form-label">Qui</label>
+
+											</div>
+											<div class="position-relative left-icon">
+												<input type="text" class="form-control" name="job_title" placeholder="Nom du coach ou du club">
+												<i class="fas fa-search"></i>
+											</div>
+										</div>
+										<div class="mb-3">
+											<div class="d-flex">
+												<label class="text-white form-label">Où</label>
+
+											</div>
+											<div class="position-relative left-icon">
+												<input type="text" class="form-control location-input" name="job_title" placeholder="Ville, Code Postal ou Région">
+												<i class="far fa-compass"></i>
+												<a href="#">
+													<div class="detect">
+														<span class="d-none d-sm-block">Localiser</span>
+														<i class="fas fa-crosshairs"></i>
+													</div>
+												</a>
+											</div>
+										</div>
+										<div class="mb-3 form-action mb-0">
+											<button type="submit" class="btn btn-primary btn-lg mt-3">
+												<i class="fas fa-search"></i>
+												Recherche</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--=================================
+			Banner -->
+
+<!--=================================
+			Easiest Way to Use -->
+<section class="space-ptb">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="feature-info-03 text-center">
+					<div class="feature-info-image bg-overlay-gradient-03 bg-holder" style="background-image: url(images/about/about-05.jpg)"></div>
+					<div class="feature-info-content">
+						<h5 class="mb-3 feature-info-title">Tous</h5>
+						<p class="mb-0">Toutes les categories</p>
+						<a class="btn btn-outline-primary mt-4" href="{{ path('app_home') }}">Voir tous</a>
+
+
+					</div>
+				</div>
+			</div>
+			{% for category in categories %}
+				<div class="col-md-4">
+					<div class="feature-info-03 text-center">
+						<div class="feature-info-image bg-overlay-gradient-03 bg-holder"></div>
+						<div class="feature-info-content">
+							<h5 class="mb-3 feature-info-title">{{category.name}}</h5>
+							<p class="mb-0">Je recherche un(e)
+								{{category.name}}</p>
+							<a class="btn btn-outline-primary mt-4" href="{{ path('app_home', {'filter': category.id}) }}">Filtrer</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+<!--=================================
+			Easiest Way to Use -->
+
+<!--=================================
+			Jobs-listing -->
+<section class="space-ptb bg-light">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col">
+				<div class="section-title-02 text-center mb-4 mb-md-5">
+					<h2 id="annonces">ANNONCES</h2>
+					<p class="mb-0">Les annonces des coachs et des clubs se trouvent juste en dessous.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			{% for produit in produits %}
+				<div class="col-lg-4 col-md-6">
+
+					<img src=" {{ asset('assets/upload/') }}{{produit.media1}} " class="card-img-top" alt=" {{produit.name}} " height="280">
+					<div class="job-list job-grid">
+						<div class="job-list-details">
+							<div class="job-list-info">
+								<div class="job-list-title">
+									<h5 class="mb-0">
+										<a href="{{path('produit_show' , {id:produit.id})}}">{{ produit.name }}</a>
+									</h5>
+								</div>
+								<div class="job-list-option">
+									<ul class="list-unstyled">
+										<li>
+
+											<p>{{ produit.description|length > 100 ? produit.description|slice(0, 100) ~
+											'...' : produit.description }}</p>
+										</li>
+										<li>
+											<i class="fas fa-map-marker-alt pe-1"></i>
+											{{ produit.city }}
+										</li>
+										<li></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="job-list-favourite-time">
+							<a class="job-list-favourite order-2" href="#">
+								<i class="fas fa-heart"></i>
+							</a>
+							<span class="job-list-time order-1">
+								<i class="far fa-clock pe-1"></i>
+								{{ produit.dateStart| date('Y-m-d') }}</span>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			<div class="row">
+				<div class="col text-center">
+					<button type="submit" class="btn btn-outline-primary">
+						Voir toutes les annonces
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--=================================
+						Jobs-listing -->
+
+	<!--=================================
+						About -->
+	<section class="space-pt">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-7">
+					<h2>Description du site</h2>
+					<p class="mt-3" id="description">
+						{{ "Bienvenue sur Routine Sport, votre portail dédié à l'épanouissement sportif personnel! Nous
+					sommes ravis de vous présenter une plateforme unique qui met en relation des individus passionnés de
+					sport avec des coaches expérimentés et des clubs dynamiques. Vous êtes un coach à la recherche de
+					talents à guider vers l'excellence, ou un club à la recherche de membres engagés? Bienvenue sur
+					Routine Sport, où vous pouvez publier vos annonces d'inscription en quelques clics! Présentez votre
+					programme, spécifiez vos critères, et laissez les passionnés du sport vous trouver. Si vous rêvez de
+					perfectionner vos compétences avec un coach dévoué ou de rejoindre un club où l'esprit d'équipe est
+					roi, Routine Sport est l'endroit idéal. Parcourez nos annonces détaillées, explorez les profils des
+					coaches et les offres des clubs, et trouvez la formation ou l'équipe qui correspond à vos
+					aspirations sportives. Les coaches et les clubs peuvent créer des annonces détaillées, présentant
+					leurs programmes, leurs succès passés, et leurs attentes. Les utilisateurs peuvent rechercher des
+					coaches ou des clubs en fonction de leurs sports préférés, de leur emplacement, et de leurs critères
+					spécifiques. S'inscrire avec un coach ou obtenir une licence de club n'a jamais été aussi facile.
+					Suivez les étapes simples pour rejoindre la communauté sportive de Routine Sport. Partagez également
+					vos propres expériences pour aider la communauté à grandir. Rejoignez-nous sur Routine Sport et
+					faites partie d'une communauté sportive dynamique où l'excellence et la passion se rencontrent. Que
+					votre parcours sportif commence ici!"|slice(0, 400) }}
+					</p>
+					<!-- Le reste du contenu... -->
+					<button class="btn btn-primary mt-3 mb-5" onclick="voirPlus()">Voir plus</button>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+	<!--=================================
+						About -->
+	<section class="space-ptb bg-light mt-5 mb-5">
+		<div class="container">
+			<h2 class=" text-center pt-0">ABONNEMENT</h2>
+		</div>
+		<div class="row justify-content-center mt-5 mb-5">
+			{% for formule in formules %}
+				<div class="col-lg-3 col-md-6" id="abonnement">
+					<div class="employers-grid mb-4 mb-lg-0">
+						<div class="text-primary font-weight-bold display-6 ">
+							<p>{{ formule.prix }}€</p>
+						</div>
+						<div class="employers-list-details">
+							<div class="employers-list-info">
+								<div>
+									<h5 class="mb-3">
+										<a href="#">{{ formule.type }}</a>
+									</h5>
+								</div>
+								<div>
+									<ul class="list-unstyled mb-3">
+										<p>{{ formule.description }}</p>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<a href="{{ path('app_stripe_pay', {'id': formule.id}) }}" class="btn btn-sm btn-dark">Choisir cette formule</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+
+
+	<!--=================================
+						Browse-job -->
+	<section class="space-ptb">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-title-02 text-center">
+						<h2>Besoins d'aide?</h2>
+						<p>En sport, le succès vient de comprendre et de suivre méticuleusement les étapes du processus.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+
+				<div class="col-md-4 mb-4 mb-md-0">
+					<div class="info-box-1 bg-primary h-100 p-lg-5 p-4">
+						<h4 class="text-white">Appelez-nous</h4>
+						<p class="text-white">Notre agent de soutien collaborera avec vous pour satisfaire vos exigences en
+																													matière de prêt.</p>
+						<h5 class="text-white mt-2 mb-0">+33 7 88 85 09 97</h5>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="info-box-1 bg-dark h-100 p-lg-5 p-4">
+						<h4 class="text-white">Contactez-nous</h4>
+						<p class="text-white">Préparez-vous à rédiger et envoyer un courriel
+						</p>
+						<a class="mt-2 mb-0 d-block" href="#">
+							elias.dejoux@gmail.com
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--=================================
+						Browse-job -->
+
+
+	<!--=================================
+						Action box & Counter -->
+	<section class="bg-light py-5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-7 mb-4 mb-sm-5 mb-lg-0">
+					<div class="d-sm-flex">
+
+						<div class="ps-sm-3 ms-sm-3 mt-3 mt-sm-0 border-sm-start ">Optez pour la création d'un compte
+																													gratuit afin d'accéder à une multitude d'annonces en lien avec des coaches et des clubs!</div>
+					</div>
+				</div>
+				<div class="col-lg-5 ">
+					<div class="row">
+						<div class="col-sm-6 ">
+							<div class="counter mb-4 mb-sm-0">
+								<div class="counter-icon">
+									<i class="flaticon-team"></i>
+								</div>
+								<div class="counter-content text-center">
+									<span class="timer mb-1 text-dark" data-to="{{ produits | length}}" data-speed="10000">{{ produits | length}}</span>
+									<label class="mb-0 form-label">Annonces postées</label>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--=================================
+						Action box & Counter -->
+
+
+	<script>
+		function voirPlus() {
+										var description = document.getElementById("description");
+								  		// Remplace le contenu actuel par la description complète
+										description.innerHTML = "{{ "Bienvenue sur Routine Sport, votre portail dédié à l'épanouissement sportif personnel! Nous sommes ravis de vous présenter une plateforme unique qui met en relation des individus passionnés de sport avec des coaches expérimentés et des clubs dynamiques. Vous êtes un coach à la recherche de talents à guider vers l'excellence, ou un club à la recherche de membres engagés? Bienvenue sur Routine Sport, où vous pouvez publier vos annonces d'inscription en quelques clics! Présentez votre programme, spécifiez vos critères, et laissez les passionnés du sport vous trouver. Si vous rêvez de perfectionner vos compétences avec un coach dévoué ou de rejoindre un club où l'esprit d'équipe est roi, Routine Sport est l'endroit idéal. Parcourez nos annonces détaillées, explorez les profils des coaches et les offres des clubs, et trouvez la formation ou l'équipe qui correspond à vos aspirations sportives. Les coaches et les clubs peuvent créer des annonces détaillées, présentant leurs programmes, leurs succès passés, et leurs attentes. Les utilisateurs peuvent rechercher des coaches ou des clubs en fonction de leurs sports préférés, de leur emplacement, et de leurs critères spécifiques. S'inscrire avec un coach ou obtenir une licence de club n'a jamais été aussi facile. Suivez les étapes simples pour rejoindre la communauté sportive de Routine Sport. Partagez également vos propres expériences pour aider la communauté à grandir. Rejoignez-nous sur Routine Sport et faites partie d'une communauté sportive dynamique où l'excellence et la passion se rencontrent. Que votre parcours sportif commence ici!" }}";
+								}
+							</script>
+		
+		
+		
+		
+		
+		
+			{% endblock %}

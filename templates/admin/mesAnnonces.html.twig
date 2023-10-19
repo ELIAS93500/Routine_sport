@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes annonces
+{% endblock %}
+
+
+{% block body %}
+
+<!--=================================
+        Jobs-listing -->
+<section class="space-ptb bg-light">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col">
+				<div class="section-title-02 text-center mb-4 mb-md-5">
+					<h2>
+						VOS ANNONCES</h2>
+					<p class="mb-0">Tes annonces ce trouve juste en dessous.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			{% for produit in app.user.produit %}
+				<div class="col-lg-4 col-md-6">
+	
+						<img src=" {{ asset('assets/upload/') }}{{produit.media1}} " class="card-img-top" alt=" {{produit.name}} " height="300">
+				
+					<div class="job-list job-grid">
+						<div class="job-list-details">
+							<div class="job-list-info">
+								<div class="job-list-title">
+									<h5 class="mb-0">
+
+										<a href="{{path('produit_show', {'id': produit.id}  )}}">{{ produit.name }}</a>
+									</h5>
+								</div>
+								<div class="job-list-option">
+									<ul class="list-unstyled">
+										<li>
+
+											<p>{{ produit.description|length > 100 ? produit.description|slice(0, 100) ~
+                                                '...' : produit.description }}</p>
+										</li>
+										<li>
+											<i class="fas fa-map-marker-alt pe-1"></i>
+											{{ produit.city }}
+										</li>
+										<li></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="job-list-favourite-time">
+							<a class="job-list-favourite order-2" href="#">
+								<i class="fas fa-heart"></i>
+							</a>
+							<span class="job-list-time order-1">
+								<i class="far fa-clock pe-1"></i>
+								{{ produit.dateStart| date('Y-m-d') }}</span>
+						</div>
+                        <div class="job-list-option mt-4 d-flex justify-content-between"> 
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{{ path('edit_product', {'id': produit.id}) }}" class="btn btn-sm btn-primary">Modifier</a>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="{{ path('delete_product', {'id': produit.id}) }}" class="btn btn-sm btn-danger">Supprimer</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+					</div>
+				</div>
+			{% endfor %}
+
+		</section>
+		<!--=================================
+		        Jobs-listing -->
+		
+	
+		    {% endblock %}

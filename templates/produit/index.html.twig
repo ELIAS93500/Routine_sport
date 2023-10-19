@@ -1,0 +1,241 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de l'annonce
+{% endblock %}
+
+
+{% block body %}
+
+
+	<!--=================================
+										inner banner -->
+	<div class="header-inner bg-light text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="text-primary">DÉTAILS ANNONCE</h2>
+					<ol class="breadcrumb mb-0 p-0">
+						<li class="breadcrumb-item">
+							<a href="{{path('app_home')}}">Accueil</a>
+						</li>
+						<li class="breadcrumb-item active">
+							<i class="fas fa-chevron-right"></i>
+							<span>Détails Annonce</span>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--=================================
+										inner banner -->
+
+	<!--=================================
+										blog -->
+	<section class="space-ptb">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="blog-post text-center">
+
+						<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="{{ asset('assets/upload/') }}{{produit.media1}}" class="d-block w-100 carousel-image" style="width: 730px; height: 500px;" alt="{{produit.name}}">
+								</div>
+								<div class="carousel-item">
+									<img src="{{ asset('assets/upload/') }}{{produit.media2}}" class="d-block w-100 carousel-image" style="width: 730px; height: 500px;" alt="{{produit.name}}">
+								</div>
+								<div class="carousel-item">
+									<img src="{{ asset('assets/upload/') }}{{produit.media3}}" class="d-block w-100 carousel-image" style="width: 730px; height: 500px;" alt="{{produit.name}}">
+								</div>
+							</div>
+							<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+
+						<div class="blog-post-content">
+							<div class="blog-post-details">
+
+								<div class="blog-post-title">
+									<h4>
+										<a href="blog-detail.html">{{ produit.name }}</a>
+									</h4>
+								</div>
+								<div class="blog-post-description">
+									<p class="mb-0">{{ produit.description }}</p>
+								</div>
+								<div class="blog-post-link justify-content-center d-flex">
+									<p class="btn btn-link p-0" href="#">{{ produit.streetNumber }}
+										{{ produit.streetName }}
+										{{ produit.city }}</p>
+								</div>
+							</div>
+							<div class="blog-post-footer">
+								<div class="blog-post-time">
+									<i class="far fa-clock"></i>
+									{{ produit.dateStart| date('Y-m-d') }}
+								</div>
+								<div class="blog-post-author">
+									<img src="images/avatar/03.jpg" alt="">{{ produit.name }}
+								</div>
+								<div class="blog-post-share"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="blog-post blog-post-quote mt-4 bg-primary">
+						<div class="blog-post-content">
+							<div class="blockquote text-center">
+								<blockquote class="text-white mb-0 ">
+									<i class="fas fa-quote-right"></i>
+									<p>{{produit.slogan}}</p>
+									<cite>–
+										{{produit.name}}</cite>
+								</blockquote>
+							</div>
+
+
+						</div>
+					</div>
+
+
+				</div>
+				<div class="col-lg-4 mt-4 mt-lg-0">
+					<div class="blog-sidebar">
+
+						<div class="widget">
+							<div class="widget-title">
+								<h5>Annonces publiées</h5>
+							</div>
+							<div class="d-flex mb-3 align-items-start">
+								<div class="avatar avatar-xl">
+									<img class="img-fluid" src="{{asset('assets/images/coach.jpg')}}" alt="">
+								</div>
+								<div class="ms-3 recent-posts">
+									<a href="#">
+										<b>{{ produit.description|length > 29 ? produit.description|slice(0, 29) ~
+                                                    '...' : produit.description }}</b>
+									</a>
+									<a class="d-block font-sm mt-1 text-light" href="#">{{ produit.dateStart| date('Y-m-d') }}</a>
+								</div>
+							</div>
+							<div class="d-flex mb-3 align-items-start">
+								<div class="avatar avatar-xl">
+									<img class="img-fluid" src="{{asset('assets/images/coach.jpg')}}" alt="">
+								</div>
+								<div class="ms-3 recent-posts">
+									<a href="#">
+										<b>{{ produit.description|length > 29 ? produit.description|slice(0, 29) ~
+                                                    '...' : produit.description }}</b>
+									</a>
+									<a class="d-block font-sm mt-1 text-light" href="#">{{ produit.dateStart| date('Y-m-d') }}</a>
+								</div>
+							</div>
+							<div class="d-flex mb-3 align-items-start">
+								<div class="avatar avatar-xl">
+									<img class="img-fluid" src="{{asset('assets/images/coach.jpg')}}" alt="">
+								</div>
+								<div class="ms-3 recent-posts">
+									<a href="#">
+										<b>{{ produit.description|length > 29 ? produit.description|slice(0, 29) ~
+                                                    '...' : produit.description }}</b>
+									</a>
+									<p class="d-block font-sm mt-1 text-light" href="#">{{ produit.dateStart| date('Y-m-d') }}</p>
+								</div>
+							</div>
+						</div>
+						<div class="widget">
+							<div class="widget-title">
+								<h5>Autre Détails</h5>
+							</div>
+							<ul class="list-unstyled list-style mb-0">
+								<li>
+
+									{% if produit.category.name == "Coach" %}
+										<p>Prix par séance :
+											{{ produit.price }}
+											€
+										</p>
+									{% else %}
+										<p>Licence :
+											{{ produit.price }}
+											€
+										</p>
+									{% endif %}
+								</li>
+								<li>
+									<p>Statut :
+										{{ produit.category.name }}
+									</p>
+								</li>
+								<li>
+									<p>Type de sport :
+										{{ produit.sportType.name }}
+									</p>
+								</li>
+								{% if app.user.ispaid == 1%}
+									<li>
+										<p>Numéro de téléphone :
+											{{produit.tel}}</p>
+									</li>
+								</a>
+							</li>
+						{% else %}
+							<li class="search my-3">
+								<strong>
+									Vous n'avez souscrit a aucune offres.
+								</strong>
+							</li>
+						{% endif %}
+					</ul>
+
+				</div>
+				<a href="{{ path('app_home') }}#abonnement" class="btn btn-dark">Abonnez-vous au Pack Membre pour bénéficier d'un coach ou rejoindre un club et booster votre expérience!</a>
+
+</div>
+
+		</div>
+	</div>
+</div></section><!--=================================
+										blog --><!--=================================
+										feature --><section class="feature-info-section">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 mb-lg-0 mb-4">
+			<div class="feature-info feature-info-02 p-4 p-lg-5 bg-primary">
+				<div class="feature-info-icon mb-3 mb-sm-0 text-dark">
+					<i class="flaticon-team"></i>
+				</div>
+				<div class="feature-info-content text-white ps-sm-4 ps-0">
+					<br>
+					<h5 class="text-white">Voir les annonces</h5>
+				</div>
+				<a class="ms-auto align-self-center" href="{{path('app_home')}}">GO!<i class="fas fa-long-arrow-alt-right"></i>
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="feature-info feature-info-02 p-4 p-lg-5 bg-dark">
+				<div class="feature-info-icon mb-3 mb-sm-0 text-primary">
+					<i class="flaticon-job-3"></i>
+				</div>
+				<div class="feature-info-content text-white ps-sm-4 ps-0">
+
+					<h5 class="text-white">Es-tu un club ou un coach ?</h5>
+				</div>
+				<a class="ms-auto align-self-center" href="{{path('upload_product')}}">Poster une annonce<i class="fas fa-long-arrow-alt-right"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div></section><!--=================================
+										feature -->
+										
+{% endblock %}
