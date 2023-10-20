@@ -32,7 +32,7 @@ class RegisterController extends AbstractController
 
             // Associe le mot de passe hashé à l'utilisateur
             $user->setPassword($hashedPassword);
-
+            $user->setIspaid(0);
             // Enregistre l'objet User dans la base de données
             $manager->persist($user);
             // Exécute les opérations enregistrées

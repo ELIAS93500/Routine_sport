@@ -180,25 +180,19 @@
 										{{ produit.sportType.name }}
 									</p>
 								</li>
-								{% if app.user.ispaid == 1%}
+								{% if app.user is defined and app.user.ispaid is defined and app.user.ispaid == 1 %}
 									<li>
-										<p>Numéro de téléphone :
-											{{produit.tel}}</p>
+										<p>Numéro de téléphone : {{ produit.tel }}</p>
 									</li>
-								</a>
-							</li>
-						{% else %}
-							<li class="search my-3">
-								<strong>
-									Vous n'avez souscrit a aucune offres.
-								</strong>
-							</li>
-						{% endif %}
+								{% else %}
+									<a href="{{ path('app_home') }}#abonnement" class="btn btn-dark">Abonnez-vous au Pack Membre pour bénéficier d'un coach ou rejoindre un club et booster votre expérience!</a>
+
+								{% endif %}
+								
 					</ul>
 
 				</div>
-				<a href="{{ path('app_home') }}#abonnement" class="btn btn-dark">Abonnez-vous au Pack Membre pour bénéficier d'un coach ou rejoindre un club et booster votre expérience!</a>
-
+				
 </div>
 
 		</div>
